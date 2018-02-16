@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Dmitriy Vereshchagin</Authors>
+    <Company />
+    <Description>Helm Build addin for Docker.</Description>
+    <PackageLicenseUrl>https://github.com/santey/Cake.Helm/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/santey/Cake.Helm</PackageProjectUrl>
+    <PackageTags>cake helm cake-build cake-contrib</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\Cake.Helm.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cake.Core" Version="0.25.0" />
+  </ItemGroup>
+
+</Project>
