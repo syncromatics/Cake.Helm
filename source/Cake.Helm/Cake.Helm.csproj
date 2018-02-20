@@ -7,7 +7,8 @@
     <Description>Helm Build addin for Docker.</Description>
     <PackageLicenseUrl>https://github.com/santey/Cake.Helm/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/santey/Cake.Helm</PackageProjectUrl>
-    <PackageTags>cake helm cake-build cake-contrib</PackageTags>
+    <PackageTags>cake helm cake-build cake-contrib</PackageTags>    
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>    
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
