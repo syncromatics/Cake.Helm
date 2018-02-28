@@ -7,7 +7,7 @@ Cake AddIn that extends Cake with Helm
 Add this addin to your Cake script:
 
 ```cake
-#addin "Cake.Helm"
+#addin "Syncromatics.Cake.Helm"
 ```
 ## Commands Supported
 
