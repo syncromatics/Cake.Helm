@@ -8,6 +8,7 @@ dotnet: 2.0.0
 script:
   - "cd ci-script"
   - "./build.sh -t NuGetPack"
+  - "cd .."
   - "if [[ $TRAVIS_PULL_REQUEST == 'false' && $TRAVIS_TAG ]]; then 
   dotnet nuget push source/nupkg/*.nupkg -k $NUGET_API_KEY -s https://www.nuget.org/api/v2/package;
   fi"
