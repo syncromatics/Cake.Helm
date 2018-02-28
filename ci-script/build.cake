@@ -14,7 +14,14 @@ var version = !string.IsNullOrEmpty(travisTag) ? travisTag : "0.0.0";
 Task("Default")
 	.Does (() =>
 	{
-		DotNetCoreRestore(CakeHelmSln);
+		DotNetCoreRestore(CakeHelmSln, new DotNetCoreRestoreSettings
+		{
+			Sources = new[]
+			{
+				"https://dotnet.myget.org/F/dotnet-core/api/v3/index.json",
+				"https://api.nuget.org/v3/index.json",
+			}
+		});
 		DotNetCoreBuild(CakeHelmSln, new DotNetCoreBuildSettings
 		{
 			Configuration = "Release",
