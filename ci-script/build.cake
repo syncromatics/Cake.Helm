@@ -14,20 +14,26 @@ var version = !string.IsNullOrEmpty(travisTag) ? travisTag : "0.0.0";
 Task("Default")
 	.Does (() =>
 	{
-		DotNetCoreRestore(CakeHelmSln, new DotNetCoreRestoreSettings
-		{
-			Sources = new[]
-			{
-				"https://dotnet.myget.org/F/dotnet-core/api/v3/index.json",
-				"https://api.nuget.org/v3/index.json",
-			}
-		});
-		DotNetCoreBuild(CakeHelmSln, new DotNetCoreBuildSettings
+		DotNetCoreRestore(CakeHelmSln);
+		var buildSettings = new DotNetCoreBuildSettings
 		{
 			Configuration = "Release",
 			ArgumentCustomization = args => args.Append($"/property:Version={version}"),
 			NoRestore = true,
-		});
+		};
+
+		buildSettings.Framework = "netstandard1.6";
+		DotNetCoreBuild(CakeHelmSln, buildSettings);
+
+		if (FileExists("/usr/lib/mono/4.6"))
+		{
+			buildSettings.EnvironmentVariables = new Dictionary<string, string>
+			{
+				{ "FrameworkPathOverride", "/usr/lib/mono/4.6" },
+			};
+		}
+		buildSettings.Framework = "net46";
+		DotNetCoreBuild(CakeHelmSln, buildSettings);
 	});
 
 Task("UnitTest")
