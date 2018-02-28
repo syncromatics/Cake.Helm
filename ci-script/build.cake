@@ -25,11 +25,11 @@ Task("Default")
 		buildSettings.Framework = "netstandard1.6";
 		DotNetCoreBuild(CakeHelmSln, buildSettings);
 
-		if (FileExists("/usr/lib/mono/4.6"))
+		if (FileExists("/usr/lib/mono/4.5"))
 		{
 			buildSettings.EnvironmentVariables = new Dictionary<string, string>
 			{
-				{ "FrameworkPathOverride", "/usr/lib/mono/4.6" },
+				{ "FrameworkPathOverride", "/usr/lib/mono/4.5" },
 			};
 		}
 		buildSettings.Framework = "net46";
