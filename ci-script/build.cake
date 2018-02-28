@@ -37,7 +37,8 @@ Task("NuGetPack")
 	DotNetCorePack (CakeHelmProj, new DotNetCorePackSettings
      {
          Configuration = "Release",
-         OutputDirectory = Nupkg
+         OutputDirectory = Nupkg,
+		 Version = EnvironmentVariable("TRAVIS_TAG"),
      });
 });
 
