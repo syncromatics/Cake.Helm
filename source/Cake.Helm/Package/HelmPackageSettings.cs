@@ -1,4 +1,4 @@
-namespace Cake.Helm
+namespace Cake.Helm.Package
 {
     public sealed class HelmPackageSettings : GlobalHelmSettings
     {
@@ -8,9 +8,9 @@ namespace Cake.Helm
         public string AppVersion { get; set; }
 
         /// <summary>
-        /// Update dependencies from "requirements.yaml" to dir "charts/" before packaging                
+        /// Update dependencies from "requirements.yaml" to dir "charts/" before packaging
         /// </summary>
-        public bool DependencyUpdate { get; set; }
+        public bool? DependencyUpdate { get; set; }
 
         /// <summary>
         /// Location to write the chart. (default ".")                                                    
@@ -23,19 +23,19 @@ namespace Cake.Helm
         public string Key { get; set; }
 
         /// <summary>
-        /// Location of a public keyring (default "C:\Users\djames/.gnupg/pubring.gpg")                   
+        /// Location of a public keyring (default "~/.gnupg/pubring.gpg")                   
         /// </summary>
         public string Keyring { get; set; }
 
         /// <summary>
         /// Save packaged chart to local chart repository (default true)                                  
         /// </summary>
-        public bool Save { get; set; }
+        public bool? Save { get; set; }
 
         /// <summary>
         /// Use a PGP private key to sign this package                                                    
         /// </summary>
-        public bool Sign { get; set; }
+        public bool? Sign { get; set; }
 
         /// <summary>
         /// Set the version on the chart to this semver version                                           

@@ -7,10 +7,10 @@ namespace Cake.Helm
         /// <summary>
         /// Enable verbose output                                                                     
         /// </summary>
-        public bool Debug {get;set;}
+        public bool? Debug {get;set;}
 
         /// <summary>
-        /// Location of your Helm config. Overrides $HELM_HOME (default "C:\Users\djames\.helm")      
+        /// Location of your Helm config. Overrides $HELM_HOME (default "~\.helm")      
         /// </summary>
         public string Home {get;set;}
 

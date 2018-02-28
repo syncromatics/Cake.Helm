@@ -1,6 +1,6 @@
 using System;
 using Cake.Core.Annotations;
-using Cake.Helm.List;
+using Cake.Helm.Package;
 
 namespace Cake.Helm
 {

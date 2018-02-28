@@ -9,7 +9,7 @@ using Cake.Helm.Extensions;
 namespace Cake.Helm
 {
     public class HelmTool<TSettings> : Tool<TSettings>
-        where TSettings : ToolSettings
+        where TSettings : GlobalHelmSettings
     {
         private readonly ICakeEnvironment _environment;
         private readonly IFileSystem _fileSystem;

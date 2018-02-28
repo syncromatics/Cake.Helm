@@ -1,4 +1,4 @@
-namespace Cake.Helm
+namespace Cake.Helm.Lint
 {
     public sealed class HelmLintSettings : GlobalHelmSettings
     {
@@ -15,7 +15,7 @@ namespace Cake.Helm
         /// <summary>
         /// Fail on lint warnings                                                                                     
         /// </summary>
-        public bool Strict { get; set; }
+        public bool? Strict { get; set; }
 
         /// <summary>
         /// Specify values in a YAML file (can specify multiple) (default [])                                         
