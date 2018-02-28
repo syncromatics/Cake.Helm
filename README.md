@@ -7,7 +7,7 @@ Cake AddIn that extends Cake with Helm
 Add this addin to your Cake script:
 
 ```cake
-#addin "Syncromatics.Cake.Helm"
+#addin "Cake.Helm"
 ```
 ## Commands Supported
 
@@ -18,7 +18,7 @@ Add this addin to your Cake script:
 ## Building
 
 [![Travis](https://img.shields.io/travis/syncromatics/Cake.Helm.svg)](https://travis-ci.org/syncromatics/Cake.Helm)
-[![NuGet](https://img.shields.io/nuget/v/Syncromatics.Cake.Helm.svg)](https://www.nuget.org/packages/Syncromatics.Cake.Helm/)
+[![NuGet](https://img.shields.io/nuget/v/Cake.Helm.svg)](https://www.nuget.org/packages/Cake.Helm/)
 
 This library is built using .NET Core and Cake.
 
