@@ -4,6 +4,7 @@ os: linux
 dist: trusty
 sudo: required
 dotnet: 2.0.0
+mono: latest
 
 script:
   - "cd ci-script"
