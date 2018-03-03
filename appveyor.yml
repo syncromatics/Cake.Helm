@@ -6,4 +6,4 @@ environment:
     secure: 8Lw1uNS56lYakYsBIBiIX91VB/FIsMeEcmgbozsr+BpqOpw3wIgGgkg8nygnWhcp
 build_script:
 - ps: cd ci-script
-- ps: .\build.ps1 -t NuGetPack
+- ps: .\build.ps1 -t NuGetPush

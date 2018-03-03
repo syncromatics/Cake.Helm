@@ -46,4 +46,19 @@ Task("NuGetPack")
 		});
 	});
 
+Task("NuGetPush")
+	.IsDependentOn("NuGetPack")
+	.Does(() => 
+	{
+		if (EnvironmentVariable("APPVEYOR_REPO_TAG") != "true") return;
+
+        var settings = new DotNetCoreNuGetPushSettings
+        {
+            Source = "https://www.nuget.org/api/v2/",
+            ApiKey = EnvironmentVariable("NUGET_API_KEY"),
+        };
+
+        DotNetCoreNuGetPush(Nupkg + File($"./Syncromatics.Cake.Helm.{version}.nupkg"), settings);
+	});
+
 RunTarget (target);
