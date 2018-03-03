@@ -17,7 +17,8 @@ Add this addin to your Cake script:
 
 ## Building
 
-[![Travis](https://img.shields.io/travis/syncromatics/Cake.Helm.svg)](https://travis-ci.org/syncromatics/Cake.Helm)
+[![AppVeyor](https://img.shields.io/appveyor/ci/thzinc/cake-helm.svg)](https://ci.appveyor.com/project/thzinc/cake-helm)
+[![AppVeyor](https://img.shields.io/appveyor/tests/thzinc/cake-helm.svg)](https://ci.appveyor.com/project/thzinc/cake-helm/build/tests)
 [![NuGet](https://img.shields.io/nuget/v/Syncromatics.Cake.Helm.svg)](https://www.nuget.org/packages/Syncromatics.Cake.Helm/)
 
 This library is built using .NET Core and Cake.
