@@ -8,32 +8,19 @@ var CakeHelmSln = File("../source/Cake.Helm.sln");
 var Nupkg = Directory("../source/nupkg");
 
 var target = Argument("target", "Default");
-var travisTag = EnvironmentVariable("TRAVIS_TAG");
-var version = !string.IsNullOrEmpty(travisTag) ? travisTag : "0.0.0";
+var tag = EnvironmentVariable("APPVEYOR_REPO_TAG_NAME");
+var version = !string.IsNullOrEmpty(tag) ? tag : "0.0.0";
 
 Task("Default")
 	.Does (() =>
 	{
 		DotNetCoreRestore(CakeHelmSln);
-		var buildSettings = new DotNetCoreBuildSettings
+		DotNetCoreBuild(CakeHelmSln, new DotNetCoreBuildSettings
 		{
 			Configuration = "Release",
 			ArgumentCustomization = args => args.Append($"/property:Version={version}"),
 			NoRestore = true,
-		};
-
-		buildSettings.Framework = "netstandard1.6";
-		DotNetCoreBuild(CakeHelmSln, buildSettings);
-
-		if (FileExists("/usr/lib/mono/4.5"))
-		{
-			buildSettings.EnvironmentVariables = new Dictionary<string, string>
-			{
-				{ "FrameworkPathOverride", "/usr/lib/mono/4.5" },
-			};
-		}
-		buildSettings.Framework = "net46";
-		DotNetCoreBuild(CakeHelmSln, buildSettings);
+		});
 	});
 
 Task("UnitTest")

@@ -1,0 +1,9 @@
+version: '{build}'
+skip_non_tags: true
+image: Visual Studio 2017
+environment:
+  NUGET_API_KEY:
+    secure: 8Lw1uNS56lYakYsBIBiIX91VB/FIsMeEcmgbozsr+BpqOpw3wIgGgkg8nygnWhcp
+build_script:
+- ps: cd ci-script
+- ps: .\build.ps1 -t NuGetPack
