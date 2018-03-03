@@ -54,7 +54,7 @@ Task("NuGetPush")
 
         var settings = new DotNetCoreNuGetPushSettings
         {
-            Source = "https://www.nuget.org/api/v2/package,
+            Source = "https://www.nuget.org/api/v2/package",
             ApiKey = EnvironmentVariable("NUGET_API_KEY"),
         };
 
