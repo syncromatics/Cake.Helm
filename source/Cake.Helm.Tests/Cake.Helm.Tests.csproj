@@ -6,8 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake" Version="0.25.0" />
-    <PackageReference Include="Cake.Testing" Version="0.25.0" />
+    <PackageReference Include="Cake.Testing" Version="0.26.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
     <PackageReference Include="NUnit" Version="3.9.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.9.0" />
@@ -16,6 +15,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cake.Helm\Cake.Helm.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
 
 </Project>
