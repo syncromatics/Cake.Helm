@@ -1,7 +1,7 @@
 ﻿namespace Cake.Helm.ChartMuseum
 {
     /// <summary>
-    /// Settings for uploading charts to a chart musuem
+    /// Settings for uploading charts to a chart museum
     /// </summary>
     public sealed class HelmChartMuseumUploadSettings : GlobalHelmSettings
     {
@@ -16,12 +16,12 @@
         public string Path { get; set; }
 
         /// <summary>
-        /// Optional username to authenticate the request to the ChartMusuem (using HTTP basic authentication)
+        /// Optional username to authenticate the request to the ChartMuseum (using HTTP basic authentication)
         /// </summary>
         public string Username { get; set; }
 
         /// <summary>
-        /// Optional password to authenticate the request to the ChartMusuem (using HTTP basic authentication)
+        /// Optional password to authenticate the request to the ChartMuseum (using HTTP basic authentication)
         /// </summary>
         public string Password { get; set; }
     }
